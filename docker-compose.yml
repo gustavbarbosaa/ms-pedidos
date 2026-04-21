@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: db_pedido
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pedidos
+    ports:
+      - 5434:5432
+    shm_size: 128mb
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgres/data
+
+volumes:
+  pgdata:
