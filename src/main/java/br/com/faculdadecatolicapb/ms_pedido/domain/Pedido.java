@@ -26,4 +26,7 @@ public class Pedido {
 
     @Column(nullable = false)
     private BigDecimal valorTotal;
+
+    @Column(name = "email")
+    private String email;
 }

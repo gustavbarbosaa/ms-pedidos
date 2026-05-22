@@ -1,5 +1,6 @@
 package br.com.faculdadecatolicapb.ms_pedido.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
@@ -10,6 +11,8 @@ public record PedidoRequest(
         Long produtoId,
         @Positive(message = "A quantidade de produtos deve ser maior que 0")
         Integer quantidade,
-        BigDecimal valorTotal
+        BigDecimal valorTotal,
+        @Email(message = "O email precisa ser válido!")
+        String email
 ) {
 }
